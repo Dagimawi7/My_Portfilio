@@ -5,6 +5,10 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Layout from "./Layout";
+import Skills from "./components/Skills";
+import Resume from "./components/Resume";
+import Certifications from "./components/Certifications";
+
 
 
 export default function App() {
@@ -13,10 +17,13 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Projects />
+      <Certifications />
+      <Layout />
+      <Resume />
       <Contact />
       <Footer />
-      <Layout />
     </>
   );
 }
