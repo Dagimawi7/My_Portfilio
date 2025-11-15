@@ -1,19 +1,34 @@
 export default function Projects() {
+    const projects = [
+      {
+        title: "Project 1",
+        description: "A cool project that does something interesting.",
+      },
+      {
+        title: "Project 2",
+        description: "Another awesome project with a clean UI.",
+      },
+      {
+        title: "Project 3",
+        description: "A full-stack application with authentication.",
+      },
+    ];
+  
     return (
-      <section id="projects" className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+      <section id="projects" className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-10">Projects</h2>
   
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 rounded-xl shadow bg-white">
-              <h3 className="text-xl font-semibold">Project 1</h3>
-              <p className="text-gray-700 mt-2">Description of your first project…</p>
-            </div>
-  
-            <div className="p-6 rounded-xl shadow bg-white">
-              <h3 className="text-xl font-semibold">Project 2</h3>
-              <p className="text-gray-700 mt-2">Description of your second project…</p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="p-6 bg-white shadow rounded-xl hover:shadow-lg transition"
+              >
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <p className="text-gray-700 mt-3">{project.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
