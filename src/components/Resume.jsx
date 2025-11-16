@@ -1,8 +1,9 @@
 import Reveal from "./Reveal";
+import './LightRays.css';
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-24 bg-gray-100">
+    <section id="resume" className="py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Reveal>
           <h2 className="text-4xl font-bold mb-6">Resume</h2>
@@ -22,15 +23,6 @@ export default function Resume() {
           >
             Download Resume (PDF)
           </a>
-        </Reveal>
-
-        <Reveal>
-          <div className="mt-12 p-6 bg-white rounded-xl shadow">
-            <h3 className="text-2xl font-semibold mb-2">Resume Preview</h3>
-            <p className="text-gray-600">
-              (You can embed a PDF preview here later if you want)
-            </p>
-          </div>
         </Reveal>
       </div>
     </section>

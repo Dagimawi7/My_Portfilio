@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import './LightRays.css';
 
 export default function Projects() {
   const projects = [

@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="about" className="py-24">
       <div className="max-w-4xl mx-auto px-6">
         <Reveal>
           <h2 className="text-4xl font-bold mb-6">About Me</h2>

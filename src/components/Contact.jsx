@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-gray-100">
+    <section id="contact" className="py-2">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Reveal>
           <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>

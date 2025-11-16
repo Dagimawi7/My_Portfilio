@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import './LightRays.css';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

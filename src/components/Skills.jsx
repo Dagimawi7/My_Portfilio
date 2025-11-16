@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 
+
 export default function Skills() {
   const skills = [
     "JavaScript",
@@ -17,7 +18,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gray-50">
+    <section id="skills" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
           <h2 className="text-4xl font-bold mb-10">Skills</h2>
