@@ -1,5 +1,7 @@
+// Import motion from Framer Motion for animations
 import { motion } from "framer-motion";
 
+// Reveal component animates its children when they appear in view
 export default function Reveal({ children }) {
   return (
     <motion.div
@@ -8,7 +10,7 @@ export default function Reveal({ children }) {
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
-      {children}
+      {children} {/* Render whatever content is wrapped inside Reveal */}
     </motion.div>
   );
 }

@@ -1,8 +1,20 @@
+/* Import Tailwind CSS utilities */
 @import "tailwindcss";
 
-
+/* Set the entire page background to black */
 body {
   background: #000000;
+  body {
+    color: #E5E5E5;
+  }
 }
-
+p {
+    color: #A0A0A0;
+}
+h1,h2{
+  color: #ffffff;
+}
+h3,h4{
+  color: #111827;
+}
 

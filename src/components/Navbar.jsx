@@ -1,20 +1,24 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
-import './LightRays.css';
+// Import hooks and libraries
+import { useState } from "react"; // state for menu open/close
+import { Menu, X } from "lucide-react"; // hamburger & close icons
+import { motion } from "framer-motion"; // animations
+import './LightRays.css'; // light rays styles
 
+// Navbar component
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // track if mobile menu is open
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen(!menuOpen); // toggle mobile menu
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
+    // Navbar container fixed at top with shadow and high z-index
+    <nav className="fixed top-0 left-0 w-full shadow z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        
         {/* Logo */}
         <h1 className="text-2xl font-bold">Dagimawi</h1>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu (hidden on mobile) */}
         <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
           <a href="#about" className="hover:text-blue-600">About</a>
           <a href="#projects" className="hover:text-blue-600">Projects</a>
@@ -39,10 +43,11 @@ export default function Navbar() {
           transition={{ duration: 0.25 }}
           className="md:hidden bg-white shadow-inner px-6 pb-4"
         >
+          {/* Mobile menu links */}
           <a
             href="#about"
             className="block py-3 border-b border-gray-100"
-            onClick={toggleMenu}
+            onClick={toggleMenu} // close menu when clicked
           >
             About
           </a>
