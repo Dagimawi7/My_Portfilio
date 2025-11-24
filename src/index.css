@@ -18,3 +18,31 @@ h3,h4{
   color: #111827;
 }
 
+/* Center the main avatar inside the card */
+.pc-avatar-content .avatar {
+  display: block;
+  width: 90%;          /* make it big, but leave some padding */
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;      /* centers horizontally */
+  object-fit: cover;   /* keeps aspect ratio */
+  border-radius: 15px; /* optional rounded corners */
+  z-index: 2;          /* above animation layers */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

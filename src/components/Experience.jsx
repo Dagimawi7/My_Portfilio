@@ -3,6 +3,7 @@ import Reveal from "./Reveal";
 // Import LightRays CSS (for background effects)
 import './LightRays.css';
 
+
 // Experience section component
 export default function Experience() {
   // Array of experiences to display

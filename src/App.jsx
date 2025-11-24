@@ -1,54 +1,69 @@
 // Import main website sections and components
-import Navbar from "./components/Navbar";          // top navigation bar
-import Hero from "./components/Hero";              // Hero section at top
-import About from "./components/About";            // About Me section
-import Projects from "./components/Projects";      // Projects section
-import Contact from "./components/Contact";        // Contact section
-import Footer from "./components/Footer";          // Footer at bottom
-import Skills from "./components/Skills";          // Skills section
-import Resume from "./components/Resume";          // Resume section
-import Certifications from "./components/Certifications"; // Certifications section
-import LightRays from "./components/LightRays";    // animated background
-import './components/LightRays.css'; 
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Skills from "./components/Skills";
+import Resume from "./components/Resume";
+import Certifications from "./components/Certifications";
+import LightRays from "./components/LightRays";
+import './components/LightRays.css';
 import Experience from "./components/Experience";
-import BounceCards from './components/BounceCards';
+import ProfileCard from './components/ProfileCard';
+import './index.css';
 
-
-
-// Main App component rendering the entire website
 export default function App() {
   return (
-    // Main container for the website
     <div className="relative w-full min-h-screen">
 
-      {/* 🔥 Full-screen animated background behind all content */}
+      {/* Subtle animated background */}
       <div className="fixed inset-0 -z-20">
         <LightRays
-          raysOrigin="top-center"  // rays start from top-center
-          raysColor=""             // ray color (default if empty)
-          raysSpeed={2}            // speed of the rays
-          lightSpread={1}          // how wide rays spread
-          rayLength={10}           // length of each ray
-          followMouse={true}       // rays follow mouse movement
-          mouseInfluence={0.15}    // mouse effect intensity
-          noiseAmount={0.1}        // randomness of rays
-          distortion={0.05}        // wave/distortion effect
+          raysOrigin="top-center"
+          raysColor="rgba(255,255,255,0.05)"  // very faint
+          raysSpeed={1}                       // slower, subtle
+          lightSpread={0.5}
+          rayLength={5}
+          followMouse={true}
+          mouseInfluence={0.05}               // minimal
+          noiseAmount={0.02}                  // less noisy
+          distortion={0.02}                   // minimal distortion
         />
       </div>
 
-      {/* Website content sections */}
-      <Navbar />         {/* Navigation bar */}
-      <Hero />           {/* Hero section */}
-      <About />          {/* About Me */}
-      <Skills />         {/* Skills list */}
+      {/* Sections */}
+      <Navbar />
+      <Hero />
+
+      {/* Centered profile card, avatar dominant */}
+      <div className="flex justify-center items-center my-10 relative z-10">
+        <ProfileCard
+          name="Dagimawi Tamrat"
+          title="Computer Science Graduate"
+          handle="dagiCodes"
+          status="Available"
+          contactText="Reach Out"
+          avatarUrl="/images/student-avatar.jpg" // Large and clear
+          enableTilt={true}
+          behindGlowEnabled={true}              // still have subtle glow
+          behindGlowColor="rgba(125,190,255,0.2)" // faint
+          behindGlowSize="30%"                  // small glow
+          onContactClick={() =>
+            window.open('https://www.linkedin.com/in/dagimawi-tamrat', '_blank')
+          }
+        />
+      </div>
+
+      <About />
+      <Skills />
       <Experience />
-      <Projects />       {/* Projects */}
-      <Certifications /> {/* Certifications */}
-      <Resume />         {/* Resume download */}
-      <Contact />        {/* Contact section */}
-      <Footer />         {/* Footer at bottom */}
-      
-    
+      <Projects />
+      <Certifications />
+      <Resume />
+      <Contact />
+      <Footer />
 
     </div>
   );
