@@ -19,7 +19,7 @@ export default function Navbar() {
         <h1 className="text-2xl font-bold">Dagimawi</h1>
 
         {/* Desktop Menu (hidden on mobile) */}
-        <div className="hidden md:flex space-x-8 text-white font-medium">
+        <div className="hidden md:flex space-x-8 text-red-700 font-medium">
           <a href="#about" className="hover:text-blue-600">About</a>
           <a href="#projects" className="hover:text-blue-600">Projects</a>
           <a href="#contact" className="hover:text-blue-600">Contact</a>

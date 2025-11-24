@@ -1,0 +1,20 @@
+.bounceCardsContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    position: absolute;
+    border: 5px solid #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: white;
+  }
+  
+  .card .image {
+    object-fit: contain;
+  }
+  

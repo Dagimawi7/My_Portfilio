@@ -11,6 +11,8 @@ import Certifications from "./components/Certifications"; // Certifications sect
 import LightRays from "./components/LightRays";    // animated background
 import './components/LightRays.css'; 
 import Experience from "./components/Experience";
+import BounceCards from './components/BounceCards';
+
 
 
 // Main App component rendering the entire website
