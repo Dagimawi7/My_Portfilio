@@ -9,7 +9,9 @@ import Skills from "./components/Skills";          // Skills section
 import Resume from "./components/Resume";          // Resume section
 import Certifications from "./components/Certifications"; // Certifications section
 import LightRays from "./components/LightRays";    // animated background
-import './components/LightRays.css';              // LightRays styles
+import './components/LightRays.css'; 
+import Experience from "./components/Experience";
+
 
 // Main App component rendering the entire website
 export default function App() {
@@ -37,11 +39,14 @@ export default function App() {
       <Hero />           {/* Hero section */}
       <About />          {/* About Me */}
       <Skills />         {/* Skills list */}
+      <Experience />
       <Projects />       {/* Projects */}
       <Certifications /> {/* Certifications */}
       <Resume />         {/* Resume download */}
       <Contact />        {/* Contact section */}
       <Footer />         {/* Footer at bottom */}
+      
+    
 
     </div>
   );

@@ -22,14 +22,7 @@ export default function About() {
         <Reveal>
           {/* Main paragraph describing you */}
           <p className="text-lg text-gray-700 leading-relaxed">
-            I'm a final-year Computer Science student and aspiring full-stack
-            software engineer. I've interned at Goldman Sachs and Kainos where
-            I learned about scalable backend systems and user-first development.
-
-            <br /><br />
-
-            I enjoy building full-stack apps using React, Node.js, and cloud
-            technologies. My goal is to build impactful software that scales.
+          I’m a recent Computer Science graduate with a strong passion for exploring all sides of the tech world. I’ve worked with a wide range of programming languages and technologies, and I’m always excited to learn something new or take on a challenge. I’m motivated, adaptable, and committed to growing both my skills and my impact in the tech industry. I’m looking forward to connecting with others and contributing to innovative projects as I start my career.
           </p>
         </Reveal>
 

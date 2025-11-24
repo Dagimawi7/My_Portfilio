@@ -1,40 +1,88 @@
 // Import Reveal component to animate content
 import Reveal from "./Reveal";
-// Import LightRays CSS (for background effects)
 import './LightRays.css';
+import zt from '../assets/zt.png';
+
+// Individual project card component
+function ProjectCard({ project }) {
+  return (
+    <div className="p-6 bg-white shadow rounded-xl hover:shadow-lg transition flex flex-col">
+      {/* Media preview */}
+      {project.media && (
+        <div className="mb-4">
+          {project.media.endsWith(".mp4") ? (
+            <video
+              src={project.media}
+              controls
+              className="w-full h-48 object-cover rounded"
+            />
+          ) : (
+            <img
+              src={project.media}
+              alt={project.title}
+              className="w-full h-48 object-cover rounded"
+              loading="lazy"
+            />
+          )}
+        </div>
+      )}
+
+      {/* Project title */}
+      <h3 className="text-xl font-semibold">{project.title}</h3>
+
+      {/* Project description */}
+      <p className="text-gray-700 mt-3 grow">{project.description}</p>
+
+      {/* Optional tech stack */}
+      {project.techStack && (
+        <p className="text-sm text-gray-500 mt-2">{project.techStack.join(", ")}</p>
+      )}
+
+      {/* Button linking to the project */}
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-center"
+        >
+          View Project
+        </a>
+      )}
+    </div>
+  );
+}
 
 // Projects section component
 export default function Projects() {
-  // Array of projects to display
   const projects = [
-    { title: "Project 1", description: "A cool project that does something interesting." },
-    { title: "Project 2", description: "Another awesome project with a clean UI." },
-    { title: "Project 3", description: "A full-stack application with authentication." },
+    { 
+      title: "Weather App", 
+      description: "Built a cross-platform desktop app with Python, PyQt5, and OpenWeatherMap API, delivering real-time weather updates with visual feedback. Designed a dark-themed, interactive UI with smooth animations and responsive layouts. Implemented robust error handling and automated testing with GitHub Actions.",
+      link: "https://example.com/weather-app",
+      media: "https://via.placeholder.com/400x250.png?text=Weather+App",
+      techStack: ["Python", "PyQt5", "OpenWeatherMap API"]
+    },
+    { 
+      title: "Full-Stack E-commerce Website", 
+      description: "Building a MERN stack e-commerce platform with React, Node.js, Express, and MongoDB. Features secure authentication, dynamic product catalog, shopping cart, and multiple payment options including Credit/Debit, PayPal, Klarna, and Google Pay. Focused on responsive UI, scalable backend architecture, and CI/CD with GitHub Actions. Learning best practices in testing, deployment, and cloud integration.",
+      link: "https://example.com/ecommerce",
+      media: zt,
+      techStack: ["React", "Node.js", "Express", "MongoDB", "CI/CD"]
+    },
   ];
 
   return (
-    // Main section for Projects with vertical padding
     <section id="projects" className="py-24">
-
-      {/* Container to center content and limit max width */}
       <div className="max-w-6xl mx-auto px-6">
-
-        {/* Animated section title */}
         <Reveal>
           <h2 className="text-4xl font-bold mb-10">Projects</h2>
         </Reveal>
 
-        {/* Grid of project cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            // Each project card animated individually
             <Reveal key={idx}>
-              <div className="p-6 bg-white shadow rounded-xl hover:shadow-lg transition">
-                {/* Project title */}
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                {/* Project description */}
-                <p className="text-gray-700 mt-3">{project.description}</p>
-              </div>
+              <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>

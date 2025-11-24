@@ -6,16 +6,17 @@ export default function Skills() {
   // Array of skills to display
   const skills = [
     "JavaScript",
-    "TypeScript",
     "React",
     "Node.js",
     "Express",
     "MongoDB",
-    "PostgreSQL",
+    "SQL",
     "Tailwind CSS",
     "Git & GitHub",
-    "AWS / Cloud",
-    "Docker",
+    "Java",
+    "Python",
+    "HTML",
+    "CSS",
     "C++",
   ];
 

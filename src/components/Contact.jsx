@@ -25,10 +25,10 @@ export default function Contact() {
         {/* Animated email link */}
         <Reveal>
           <a
-            href="mailto:your-email@example.com" // opens default mail client
+            href="mailto:20dtamrat@gmail.com" // opens default mail client
             className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
           >
-            your-email@example.com
+            Email
           </a>
         </Reveal>
 
