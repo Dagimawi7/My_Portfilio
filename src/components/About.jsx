@@ -1,5 +1,6 @@
 // Import the Reveal component (used for fade/slide animations when elements appear)
 import Reveal from "./Reveal";
+import ModelViewer from './ModelViewer';
 
 // This component creates the "About Me" section of the website
 export default function About() {

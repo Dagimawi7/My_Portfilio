@@ -50,7 +50,10 @@ export default function Hero() {
         >
           Contact Me
         </a>
+        
       </motion.div>
+
+      
     </section>
   );
 }

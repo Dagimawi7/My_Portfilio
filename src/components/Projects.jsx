@@ -3,6 +3,7 @@ import Reveal from "./Reveal";
 import './LightRays.css';
 import zt from '../assets/zt.png';
 import CircularGallery from "./CircularGallery";
+import ChromaGrid from "./ChromaGrid";
 
 
 // Individual project card component

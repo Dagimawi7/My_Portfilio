@@ -17,7 +17,7 @@ h1,h2{
 h3,h4{
   color: #111827;
 }
-
+/* profile card */
 /* Center the main avatar inside the card */
 .pc-avatar-content .avatar {
   display: block;
@@ -29,6 +29,15 @@ h3,h4{
   border-radius: 15px; /* optional rounded corners */
   z-index: 2;          /* above animation layers */
 }
+
+.pc-card-wrapper {
+  position: relative;   /* keep current positioning */
+  top: -70px;           /* move card 50px up, adjust as needed */
+  display: flex;
+  justify-content: center;  /* keep it centered horizontally */
+  z-index: 5;           /* above background animations */
+}
+
 
 
 

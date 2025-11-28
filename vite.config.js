@@ -4,6 +4,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
-    tailwindcss(),],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+  // Add this to allow importing .glb and .gltf files
+  assetsInclude: ['**/*.glb', '**/*.gltf'],
 });

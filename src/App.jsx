@@ -13,6 +13,8 @@ import './components/LightRays.css';
 import Experience from "./components/Experience";
 import ProfileCard from './components/ProfileCard';
 import './index.css';
+import ChromaGrid from "./components/ChromaGrid";
+import ModelViewer from "./components/ModelViewer";
 
 export default function App() {
   return (
@@ -55,15 +57,17 @@ export default function App() {
           }
         />
       </div>
-
+      
       <About />
       <Skills />
       <Experience />
-      <Projects />
+      <ChromaGrid />
       <Certifications />
       <Resume />
       <Contact />
       <Footer />
+      
+          
 
     </div>
   );
