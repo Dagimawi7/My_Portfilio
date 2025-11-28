@@ -1,72 +1,97 @@
 // Import hooks and libraries
-import { useState } from "react"; // state for menu open/close
-import { Menu, X } from "lucide-react"; // hamburger & close icons
-import { motion } from "framer-motion"; // animations
-import './LightRays.css'; // light rays styles
+import { useState } from "react"; 
+import { Menu, X } from "lucide-react"; 
+import { motion } from "framer-motion"; 
+import './LightRays.css';
 
-// Navbar component
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false); // track if mobile menu is open
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen); // toggle mobile menu
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    // Navbar container fixed at top with shadow and high z-index
     <nav className="fixed top-0 left-0 w-full shadow z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         
-        {/* Logo */}
-        <h1 className="text-2xl font-bold">Dagimawi</h1>
+        {/* Logo as SVG/PNG */}
+        <a href="#home" className="flex items-center">
+          <img 
+            src="https://img.icons8.com/?size=100&id=NsK2E5UAFZE-&format=png&color=000000" 
+            alt="Logo" 
+            className="w-15 h-15 mr-2"
+          />
+          <span className="text-2xl font-bold text-white">DT</span>
+        </a>
 
-        {/* Desktop Menu (hidden on mobile) */}
-        <div className="hidden md:flex space-x-8 text-red-700 font-medium">
-          <a href="#about" className="hover:text-blue-600">About</a>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8 font-medium text-white">
+          <a href="#about" className="hover:text-blue-600">About Me</a>
+          <a href="#skills" className="hover:text-blue-600">Skills</a>
+          <a href="#experience" className="hover:text-blue-600">Experience</a>
           <a href="#projects" className="hover:text-blue-600">Projects</a>
+          <a href="#certifications" className="hover:text-blue-600">Certifications</a>
+          <a href="#resume" className="hover:text-blue-600">Resume</a>
           <a href="#contact" className="hover:text-blue-600">Contact</a>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* 🍏 Mobile Glass Button */}
         <button
-          className="md:hidden"
+          className="
+            md:hidden 
+            p-2 
+            rounded-xl 
+            bg-white/20
+            backdrop-blur-md
+            border border-white/40
+            shadow-sm
+            text-white
+          "
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* 🍏 Apple-Style Glass Mobile Menu */}
       {menuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
-          className="md:hidden bg-white shadow-inner px-6 pb-4"
+          className="
+            md:hidden
+            backdrop-blur-xl
+            bg-white/30
+            border-t border-white/40
+            shadow-xl
+            px-6 pb-4 pt-2
+            rounded-b-2xl
+          "
         >
-          {/* Mobile menu links */}
-          <a
-            href="#about"
-            className="block py-3 border-b border-gray-100"
-            onClick={toggleMenu} // close menu when clicked
-          >
-            About
-          </a>
-
-          <a
-            href="#projects"
-            className="block py-3 border-b border-gray-100"
-            onClick={toggleMenu}
-          >
-            Projects
-          </a>
-
-          <a
-            href="#contact"
-            className="block py-3"
-            onClick={toggleMenu}
-          >
-            Contact
-          </a>
+          {[
+            { id: "about", label: "About Me" },
+            { id: "skills", label: "Skills" },
+            { id: "experience", label: "Experience" },
+            { id: "projects", label: "Projects" },
+            { id: "certifications", label: "Certifications" },
+            { id: "resume", label: "Resume" },
+            { id: "contact", label: "Contact" },
+          ].map((item, index) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`
+                block py-3 
+                text-white
+                font-medium
+                ${index !== 6 ? "border-b border-white/20" : ""}
+              `}
+              onClick={toggleMenu}
+            >
+              {item.label}
+            </a>
+          ))}
         </motion.div>
       )}
     </nav>

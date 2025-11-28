@@ -1,17 +1,12 @@
-// Import Reveal component to animate content
 import Reveal from "./Reveal";
-// Import LightRays CSS (for background effects)
 import './LightRays.css';
 import TiltedCard from './TiltedCard';
-
-
+import ElectricBorder from './ElectricBorder';
 
 export default function Resume() {
   return (
     <section id="resume" className="py-24">
-
       <div className="max-w-4xl mx-auto px-6 text-center">
-
         <Reveal>
           <h2 className="text-4xl font-bold mb-6">Resume</h2>
         </Reveal>
@@ -24,20 +19,26 @@ export default function Resume() {
 
         <Reveal>
           <div className="flex flex-col items-center">
-            <TiltedCard
-              imageSrc="src/assets/resumepic.png" // image preview of your resume
-              altText="My Resume"
-              captionText="My Resume"
-              containerHeight="400px"
-              containerWidth="300px"
-              imageHeight="400px"
-              imageWidth="300px"
-              rotateAmplitude={10}
-              scaleOnHover={1.05}
-              showMobileWarning={false}
-              showTooltip={true}
-              displayOverlayContent={false} // we don't need overlay
-            />
+            <ElectricBorder
+              color="#7df9ff"
+              speed={1}
+              chaos={0.6}
+              thickness={3}
+              style={{ borderRadius: '16px', display: 'inline-block' }}
+            >
+              <TiltedCard
+                imageSrc="src/assets/resumepic.png" // image preview of your resume
+                containerHeight="400px"
+                containerWidth="300px"
+                imageHeight="400px"
+                imageWidth="300px"
+                rotateAmplitude={10}
+                scaleOnHover={1.05}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={false}
+              />
+            </ElectricBorder>
 
             {/* Download button centered at the bottom of the card */}
             <a
@@ -49,7 +50,6 @@ export default function Resume() {
             </a>
           </div>
         </Reveal>
-
       </div>
     </section>
   );
