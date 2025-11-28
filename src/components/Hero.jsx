@@ -7,14 +7,23 @@ export default function Hero() {
     // Full-screen Hero section with centered content
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
-      {/* Animated main heading */}
+      {/* Animated main heading with waving hand */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold mb-6"
+        className="text-4xl md:text-6xl font-bold mb-6 flex items-center justify-center space-x-3"
       >
-        Hi, I'm <span className="text-blue-600">Dagimawi</span> 👋
+        <span>Hi, I'm <span className="text-blue-600">Dagimawi</span></span>
+        
+        {/* Waving hand animation */}
+        <motion.span
+          animate={{ rotate: [0, 20, -20, 20, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="inline-block"
+        >
+          👋
+        </motion.span>
       </motion.h1>
 
       {/* Animated subheading/description */}
@@ -53,7 +62,6 @@ export default function Hero() {
         
       </motion.div>
 
-      
     </section>
   );
 }

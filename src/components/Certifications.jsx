@@ -1,27 +1,38 @@
 import Reveal from "./Reveal";
 import { motion } from "framer-motion";
 import ElectricBorder from "./ElectricBorder"; // Import ElectricBorder
-import pyt from '../assets/pyt.png';
+import pyt from '../assets/pyt.png'; // Python logo example
+
 
 export default function Certifications() {
   const certs = [
     {
+      title: "Master the Coding Interview: Data Structures + Algorithms",
+      organization: "Udemy",
+      year: "2025",
+      img: "src/assets/dsacert.png", // Replace with actual path to PDF/PNG preview
+      link: "https://www.udemy.com/certificate/UC-3fa9780e-9d66-4a5a-a218-507d0f4ede08/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com"
+    },
+    {
+      title: "Python Basic Certification",
+      organization: "HackerRank",
+      year: "2024",
+      img: "src/assets/pyt.png",
+      link: "https://www.hackerrank.com/certificates/iframe/c81dbcc17c2a"
+    },
+    
+    {
       title: "AWS Cloud Practitioner",
       organization: "Amazon Web Services",
-      year: "2024",
-      img: pyt,
+      year: "soon",
+      img: "",
     },
-    {
-      title: "Google Data Analytics Certificate",
-      organization: "Google",
-      year: "2023",
-      img: "/google.png",
-    },
+    
     {
       title: "Full-Stack Web Development",
-      organization: "Meta / Coursera",
-      year: "2023",
-      img: "/meta.png",
+      organization: "Udemy",
+      year: "soon",
+      img: "",
     },
   ];
 
@@ -45,8 +56,8 @@ export default function Certifications() {
                 <motion.div
                   className="relative bg-white rounded-2xl p-6 flex flex-col items-center justify-center"
                   style={{
-                    width: "384px",     
-                    height: "384px",    
+                    width: "384px",
+                    height: "384px",
                   }}
                   initial={{ rotate: i === 0 ? -8 : i === 2 ? 8 : 0, y: 0 }}
                   whileHover={{
@@ -69,6 +80,18 @@ export default function Certifications() {
 
                   <p className="text-gray-600 text-center">{cert.organization}</p>
                   <p className="text-gray-500 text-sm mt-2">{cert.year}</p>
+
+                  {/* Optional: link to certificate PDF */}
+                  {cert.link && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 text-blue-600 underline hover:text-blue-800"
+                    >
+                      Show Credential
+                    </a>
+                  )}
                 </motion.div>
               </ElectricBorder>
             </Reveal>
