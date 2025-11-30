@@ -62,14 +62,14 @@ export default function Projects() {
     { 
       title: "Weather App", 
       description: "Built a cross-platform desktop app with Python, PyQt5, and OpenWeatherMap API, delivering real-time weather updates with visual feedback. Designed a dark-themed, interactive UI with smooth animations and responsive layouts. Implemented robust error handling and automated testing with GitHub Actions.",
-      link: "https://example.com/weather-app",
+      link: "https://github.com/Dagimawi7/Weather-Application",
       media: "https://via.placeholder.com/400x250.png?text=Weather+App",
       techStack: ["Python", "PyQt5", "OpenWeatherMap API"]
     },
     { 
       title: "Full-Stack E-commerce Website", 
       description: "Building a MERN stack e-commerce platform with React, Node.js, Express, and MongoDB. Features secure authentication, dynamic product catalog, shopping cart, and multiple payment options including Credit/Debit, PayPal, Klarna, and Google Pay. Focused on responsive UI, scalable backend architecture, and CI/CD with GitHub Actions. Learning best practices in testing, deployment, and cloud integration.",
-      link: "https://example.com/ecommerce",
+      link: "https://github.com/Dagimawi7/ZT-Ecommerce-Web",
       media: zt,
       techStack: ["React", "Node.js", "Express", "MongoDB", "CI/CD"]
     },
