@@ -14,6 +14,7 @@ export default defineConfig({
 
   // Adding browser compatibility targets
   build: {
-    target: ['chrome89', 'firefox89', 'safari14', 'edge89'], 
+    target: ['es2015'], 
+    // or specific browsers:
   }
 });
