@@ -43,10 +43,10 @@ export default function App() {
         <ProfileCard
           name="Dagimawi Tamrat"
           title="Computer Science Graduate"
-          handle="dagiCodes"
+          handle="Dagimawi7"
           status="Available"
           contactText="Reach Out"
-          avatarUrl="/images/student-avatar.jpg" // Large and clear
+          avatarUrl="https://img.icons8.com/?size=100&id=NsK2E5UAFZE-&format=png&color=000000" // Large and clear
           enableTilt={true}
           behindGlowEnabled={true}              // still have subtle glow
           behindGlowColor="rgba(125,190,255,0.2)" // faint

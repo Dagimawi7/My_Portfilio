@@ -23,7 +23,7 @@ const ProfileCardComponent = ({
     iconUrl = profile,       // icon 
     grainUrl = '',                              // optional background texture
     innerGradient,
-    behindGlowEnabled = false,
+    behindGlowEnabled = true,
     behindGlowColor = 'rgba(100, 150, 255, 0.6)', // soft glow
     behindGlowSize = '50%',
     className = '',
