@@ -8,6 +8,12 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  // Add this to allow importing .glb and .gltf files
+
+  // Allow importing .glb and .gltf files
   assetsInclude: ['**/*.glb', '**/*.gltf'],
+
+  // Adding browser compatibility targets
+  build: {
+    target: ['chrome89', 'firefox89', 'safari14', 'edge89'], 
+  }
 });
