@@ -3,6 +3,7 @@ import './LightRays.css';
 import TiltedCard from './TiltedCard';
 import ElectricBorder from './ElectricBorder';
 import resume from '../assets/resumepic.png';
+import resumepdf from '../assets/Resume.pdf';
 
 export default function Resume() {
   return (
@@ -43,7 +44,7 @@ export default function Resume() {
 
             {/* Download button centered at the bottom of the card */}
             <a
-              href= "/src/assets/Resume.pdf"
+              href= {resumepdf}
               target="_blank"
               className="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
             >
