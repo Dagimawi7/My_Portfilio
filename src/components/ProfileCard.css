@@ -36,16 +36,23 @@
 .follow-btn {
   margin-top: 18px;
   padding: 10px 24px;
-  border: none;
-  border-radius: 999px; /* full rounded pill shape */
-  background: #ffffff;  /* pure white */
-  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* soft glass border */
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15); /* glass effect */
+  backdrop-filter: blur(10px);            /* frosted glass */
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;                            /* white text */
   font-weight: 600;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
   font-size: 15px;
 }
 
-.follow-btn:hover {
-  background: #f2f2f2; /* subtle hover like Instagram */
+/* Hover / tap → turns fully solid white */
+.follow-btn:hover,
+.follow-btn:active {
+  background: #ffffff;
+  color: #000;               /* black text on white */
+  border-color: #ffffff;
 }
+
