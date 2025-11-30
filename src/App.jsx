@@ -40,21 +40,7 @@ export default function App() {
 
       {/* Centered profile card, avatar dominant */}
       <div className="flex justify-center items-center my-10 relative z-10">
-        <ProfileCard
-          name="Dagimawi Tamrat"
-          title="Computer Science Graduate"
-          handle="Dagimawi7"
-          status="Available"
-          contactText="Reach Out"
-          avatarUrl="https://img.icons8.com/?size=100&id=NsK2E5UAFZE-&format=png&color=000000" // Large and clear
-          enableTilt={true}
-          behindGlowEnabled={true}              // still have subtle glow
-          behindGlowColor="rgba(125,190,255,0.2)" // faint
-          behindGlowSize="30%"                  // small glow
-          onContactClick={() =>
-            window.open('https://www.linkedin.com/in/dagimawi-tamrat', '_blank')
-          }
-        />
+        <ProfileCard />
       </div>
       
       <About />
