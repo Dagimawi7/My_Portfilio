@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 import './LightRays.css';
 import TiltedCard from './TiltedCard';
 import ElectricBorder from './ElectricBorder';
-import resumepic from '../assets/resumepic.png';
+import resume from '../assets/resumepic.png';
 
 export default function Resume() {
   return (
@@ -28,7 +28,7 @@ export default function Resume() {
               style={{ borderRadius: '16px', display: 'inline-block' }}
             >
               <TiltedCard
-                imageSrc="src/assets/resumepic.png" // image preview of your resume
+                imageSrc={resume} // image preview of your resume
                 containerHeight="400px"
                 containerWidth="300px"
                 imageHeight="400px"
@@ -43,7 +43,7 @@ export default function Resume() {
 
             {/* Download button centered at the bottom of the card */}
             <a
-              src= {resumepic}
+              href= "/src/assets/Resume.pdf"
               target="_blank"
               className="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
             >
