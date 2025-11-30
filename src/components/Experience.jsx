@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-import ElectricBorder from "./ElectricBorder"; // Import your ElectricBorder
+import ElectricBorder from "./ElectricBorder"; // Optimized version
 import './LightRays.css';
 
 export default function Experience() {
@@ -31,8 +31,12 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
+
+        {/* Section Title */}
         <Reveal>
-          <h2 className="text-4xl font-bold mb-10">Experience</h2>
+          <h2 className="text-4xl font-bold mb-10 text-center md:text-left">
+            Experience
+          </h2>
         </Reveal>
 
         <div className="space-y-8">
@@ -40,12 +44,10 @@ export default function Experience() {
             <Reveal key={idx}>
               <ElectricBorder
                 color="#7df9ff"
-                speed={1}
-                chaos={0.6}
                 thickness={2}
                 style={{ borderRadius: '12px' }}
               >
-                <div className="p-6 bg-white rounded-xl">
+                <div className="p-6 bg-white rounded-xl shadow-lg transition-transform hover:scale-[1.02] duration-300 ease-in-out">
                   <h3 className="text-xl font-semibold">{exp.company}</h3>
                   <h4 className="text-gray-600 mt-1">{exp.role}</h4>
                   <p className="text-gray-500 text-sm mt-1">{exp.period}</p>

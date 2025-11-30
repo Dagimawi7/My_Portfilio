@@ -14,12 +14,10 @@ export default function ProjectsChroma({
   ease = 'power3.out'
 }) {
   const rootRef = useRef(null);
-  const fadeRef = useRef(null);
-  const setX = useRef(null);
-  const setY = useRef(null);
+  const spotlightRef = useRef(null);
   const pos = useRef({ x: 0, y: 0 });
+  const hoveredCard = useRef(null);
 
-  // Fallback demo
   const fallback = [
     {
       title: "Weather App",
@@ -45,43 +43,58 @@ export default function ProjectsChroma({
 
   const data = projects?.length ? projects : fallback;
 
+  // Initialize spotlight position
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
 
-    setX.current = gsap.quickSetter(root, '--x', 'px');
-    setY.current = gsap.quickSetter(root, '--y', 'px');
-
     const { width, height } = root.getBoundingClientRect();
     pos.current = { x: width / 2, y: height / 2 };
 
-    setX.current(pos.current.x);
-    setY.current(pos.current.y);
+    gsap.set(spotlightRef.current, {
+      '--x': pos.current.x,
+      '--y': pos.current.y,
+    });
   }, []);
 
-  // Spotlight moves to cursor
-  const moveTo = (x, y) => {
-    gsap.to(pos.current, {
-      x,
-      y,
+  const moveSpotlight = (x, y) => {
+    pos.current = { x, y };
+    gsap.to(spotlightRef.current, {
+      '--x': x,
+      '--y': y,
       duration: damping,
       ease,
-      onUpdate: () => {
-        setX.current(pos.current.x);
-        setY.current(pos.current.y);
-      },
-      overwrite: true,
     });
   };
 
-  const handleMove = (e) => {
+  const handlePointerMove = (e) => {
     const rect = rootRef.current.getBoundingClientRect();
-    moveTo(e.clientX - rect.left, e.clientY - rect.top);
-    gsap.to(fadeRef.current, { opacity: 0, duration: 0.25 });
+    moveSpotlight(e.clientX - rect.left, e.clientY - rect.top);
+    if (hoveredCard.current) {
+      gsap.to(hoveredCard.current.querySelector('.chroma-overlay'), { opacity: 0, duration: 0.25 });
+    }
   };
 
-  const handleLeave = () => {
-    gsap.to(fadeRef.current, { opacity: 1, duration: fadeOut });
+  const handlePointerLeave = () => {
+    if (hoveredCard.current) {
+      gsap.to(hoveredCard.current.querySelector('.chroma-overlay'), { opacity: 1, duration: fadeOut });
+    }
+  };
+
+  const handleCardHover = (e) => {
+    hoveredCard.current = e.currentTarget;
+    // Fade out other cards slightly for focus (high SNR)
+    gsap.to('.chroma-card', {
+      opacity: (i, target) => (target === hoveredCard.current ? 1 : 0.5),
+      scale: (i, target) => (target === hoveredCard.current ? 1.05 : 0.95),
+      duration: 0.3,
+      ease: 'power1.out',
+    });
+  };
+
+  const handleCardLeave = () => {
+    hoveredCard.current = null;
+    gsap.to('.chroma-card', { opacity: 1, scale: 1, duration: 0.3, ease: 'power1.out' });
   };
 
   const handleCardMove = (e) => {
@@ -110,21 +123,22 @@ export default function ProjectsChroma({
             '--cols': columns,
             '--rows': rows,
           }}
-          onPointerMove={handleMove}
-          onPointerLeave={handleLeave}
+          onPointerMove={handlePointerMove}
+          onPointerLeave={handlePointerLeave}
         >
           {data.map((p, i) => (
             <article
               key={i}
               className="chroma-card"
               onMouseMove={handleCardMove}
+              onMouseEnter={handleCardHover}
+              onMouseLeave={handleCardLeave}
               onClick={() => handleCardClick(p.url)}
               style={{
                 '--card-border': p.borderColor || '#3b82f6',
                 '--card-gradient': p.gradient || 'linear-gradient(135deg, #3b82f6, #000)',
               }}
             >
-              {/* Media preview */}
               <div className="chroma-img-wrapper">
                 {p.media?.endsWith('.mp4') ? (
                   <video src={p.media} className="media" controls />
@@ -133,18 +147,16 @@ export default function ProjectsChroma({
                 )}
               </div>
 
-              {/* Text */}
               <footer className="chroma-info">
                 <h3 className="name">{p.title}</h3>
                 <p className="role">{p.description}</p>
-                {p.techStack && (
-                  <p className="stack">{p.techStack.join(", ")}</p>
-                )}
+                {p.techStack && <p className="stack">{p.techStack.join(", ")}</p>}
               </footer>
+
+              <div className="chroma-overlay" />
             </article>
           ))}
-          <div className="chroma-overlay" />
-          <div ref={fadeRef} className="chroma-fade" />
+          <div ref={spotlightRef} className="chroma-fade" />
         </div>
       </div>
     </section>

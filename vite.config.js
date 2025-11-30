@@ -8,13 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-
-  // Allow importing .glb and .gltf files
   assetsInclude: ['**/*.glb', '**/*.gltf'],
-
-  // Adding browser compatibility targets
   build: {
-    target: ['es2015'], 
-    // or specific browsers:
+    target: ['es2015'], // ensures compatibility with older browsers
+    polyfillDynamicImport: true,
   }
 });
