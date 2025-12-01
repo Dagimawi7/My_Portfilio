@@ -27,7 +27,7 @@ export default function ProjectsChroma({
       techStack: ["Python", "PyQt5", "OpenWeatherMap API"],
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg, #4F46E5, #000)",
-      url: "https://example.com/weather-app",
+      url: "https://github.com/Dagimawi7/Weather-Application",
     },
     {
       title: "E-commerce Website",
@@ -37,7 +37,7 @@ export default function ProjectsChroma({
       techStack: ["React", "Node.js", "MongoDB"],
       borderColor: "#10B981",
       gradient: "linear-gradient(210deg, #10B981, #000)",
-      url: "https://example.com/ecommerce",
+      url: "https://github.com/Dagimawi7/ZT-Ecommerce-Web",
     },
   ];
 
