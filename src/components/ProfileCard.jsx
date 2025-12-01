@@ -47,9 +47,8 @@ export default function ProfileCard() {
               alt="Dagimawi Tamrat"
               className="w-full h-full object-cover rounded-lg border-2 border-yellow-400/50"
             />
-            {/* Position Badge */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-400 px-4 py-1 rounded-full border-2 border-blue-900 shadow-lg">
-              <span className="text-blue-900 font-bold text-xs uppercase">Full-Stack</span>
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-400 px-5 py-1 rounded-full border-2 border-blue-900 shadow-lg whitespace-nowrap">
+              <span className="text-blue-900 font-bold text-xs uppercase">Aspiring Full-Stack</span>
             </div>
           </div>
 

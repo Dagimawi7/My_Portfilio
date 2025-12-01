@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [text, setText] = useState("");
-  const fullText = "Full-Stack Software Engineer";
+  const fullText = "Aspiring Full-Stack Software Engineer";
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
@@ -13,8 +13,8 @@ export default function Hero() {
       const i = loopNum % 2; // We only have one phrase for now, but keeping logic extensible
       const fullTxt = fullText;
 
-      setText(isDeleting 
-        ? fullTxt.substring(0, text.length - 1) 
+      setText(isDeleting
+        ? fullTxt.substring(0, text.length - 1)
         : fullTxt.substring(0, text.length + 1)
       );
 
@@ -34,7 +34,7 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-      
+
       {/* Background Glow (Optional enhancement) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
@@ -46,7 +46,7 @@ export default function Hero() {
         className="text-5xl md:text-7xl font-bold mb-6 flex flex-col md:flex-row items-center justify-center gap-3"
       >
         <span>Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Dagimawi</span></span>
-        
+
         {/* Waving hand */}
         <motion.span
           animate={{ rotate: [0, 15, -15, 15, 0] }}
@@ -80,7 +80,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.4 }}
         className="text-base md:text-lg text-gray-500 max-w-2xl mb-12 leading-relaxed"
       >
-        Passionate about building scalable, impactful solutions with modern technologies. 
+        Passionate about building scalable, impactful solutions with modern technologies.
         Turning complex problems into elegant code.
       </motion.p>
 
@@ -98,7 +98,7 @@ export default function Hero() {
           <span className="relative z-10">View Projects</span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
-        
+
         <a
           href="#contact"
           className="px-8 py-3 border border-gray-700 text-gray-300 rounded-full font-medium hover:bg-white/5 hover:border-white/20 transition-all hover:text-white"
