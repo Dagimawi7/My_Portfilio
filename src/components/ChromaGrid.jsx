@@ -20,24 +20,34 @@ export default function ProjectsChroma({
 
   const fallback = [
     {
-      title: "Weather App",
+      title: "Weather Dashboard",
       description:
-        "Cross-platform weather app with real-time updates, PyQt5 UI, animations, and GitHub Actions automation.",
-      media: "https://via.placeholder.com/400x250.png?text=Weather+App",
-      techStack: ["Python", "PyQt5", "OpenWeatherMap API"],
-      borderColor: "#4F46E5",
-      gradient: "linear-gradient(145deg, #4F46E5, #000)",
+        "A robust, cross-platform weather application featuring real-time data visualization, location-based forecasting, and a responsive PyQt5 interface. Engineered for performance and reliability.",
+      media: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=1000",
+      techStack: ["Python", "PyQt5", "REST APIs", "CI/CD"],
+      borderColor: "#3b82f6", // Blue
+      gradient: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
       url: "https://github.com/Dagimawi7/Weather-Application",
     },
     {
-      title: "E-commerce Website",
+      title: "E-Commerce Platform",
       description:
-        "Full MERN e-commerce platform with secure auth, dynamic catalog, cart, payments, and CI/CD.",
+        "A full-stack MERN solution with secure JWT authentication, Stripe payment integration, and a dynamic inventory management system. Optimized for scalability and user experience.",
       media: zt,
-      techStack: ["React", "Node.js", "MongoDB"],
-      borderColor: "#10B981",
-      gradient: "linear-gradient(210deg, #10B981, #000)",
+      techStack: ["React", "Node.js", "MongoDB", "Redux"],
+      borderColor: "#10B981", // Emerald
+      gradient: "linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(0, 0, 0, 0))",
       url: "https://zt-ecommerce-web-54zk.vercel.app/",
+    },
+    {
+      title: "Portfolio V1",
+      description:
+        "My previous portfolio site, showcasing early frontend development skills and design experiments. A stepping stone to modern web development.",
+      media: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      borderColor: "#8b5cf6", // Violet
+      gradient: "linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0))",
+      url: "#",
     },
   ];
 

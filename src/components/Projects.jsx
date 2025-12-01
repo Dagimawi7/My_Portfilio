@@ -1,4 +1,4 @@
-function ProjectCard({ project }) {
+export default function ProjectCard({ project }) {
   return (
     <div className="p-6 bg-white shadow rounded-xl hover:shadow-lg transition flex flex-col min-h-0">
       {/* Media preview */}

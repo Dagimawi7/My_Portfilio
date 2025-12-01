@@ -1,6 +1,5 @@
 import Reveal from "./Reveal";
 import { motion } from "framer-motion";
-import ElectricBorder from "./ElectricBorder"; // Import ElectricBorder
 import dsacert from '../assets/dsacert.png';
 import pyt from '../assets/pyt.png';
 
@@ -23,76 +22,70 @@ export default function Certifications() {
     {
       title: "AWS Cloud Practitioner",
       organization: "Amazon Web Services",
-      year: "soon",
-      img: null,
+      year: "In Progress",
+      img: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg",
     },
     {
       title: "Full-Stack Web Development",
       organization: "Udemy",
-      year: "soon",
-      img: null,
+      year: "In Progress",
+      img: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/udemy.svg",
     },
   ];
 
   return (
-    <section id="certifications" className="py-24">
+    <section id="certifications" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
-          <h2 className="text-4xl font-bold mb-16 text-center">Certifications</h2>
+          <h2 className="text-4xl font-bold mb-16 text-center text-white">Certifications</h2>
         </Reveal>
 
-        <div className="flex justify-center gap-8 flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certs.map((cert, i) => (
             <Reveal key={i}>
-              <ElectricBorder
-                color="#7df9ff"
-                speed={0.8}   // slightly slower for Safari
-                chaos={0.5}   // reduce chaos for smoother animation
-                thickness={2}
-                style={{ borderRadius: '24px', display: 'inline-block' }}
+              <motion.div
+                className="h-full bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex flex-col items-center text-center hover:bg-white/10 transition-colors group relative overflow-hidden"
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <motion.div
-                  className="relative bg-white rounded-2xl p-6 flex flex-col items-center justify-center shadow-sm"
-                  style={{
-                    width: "100%",   // responsive width
-                    maxWidth: "384px",
-                    aspectRatio: "1 / 1", // maintain square shape
-                  }}
-                  initial={{ rotate: 0, y: 0 }}
-                  whileHover={{
-                    rotate: 0,
-                    y: -10,  // smaller movement for Safari smoothness
-                    transition: { type: "spring", stiffness: 150 },
-                  }}
-                >
-                  {cert.img && (
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="w-20 h-20 mb-6 bg-black/20 rounded-full flex items-center justify-center p-4 border border-white/5 shadow-inner">
+                  {cert.img ? (
                     <img
                       src={cert.img}
                       alt={cert.title}
-                      className="w-24 h-24 object-contain mb-4"
+                      className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                       loading="lazy"
                     />
+                  ) : (
+                    <span className="text-2xl">📜</span>
                   )}
+                </div>
 
-                  <h3 className="text-xl sm:text-2xl font-semibold text-center mb-2">
-                    {cert.title}
-                  </h3>
+                <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 min-h-[3.5rem]">
+                  {cert.title}
+                </h3>
 
-                  <p className="text-gray-600 text-center">{cert.organization}</p>
-                  <p className="text-gray-500 text-sm mt-2">{cert.year}</p>
+                <p className="text-blue-300 text-sm mb-1">{cert.organization}</p>
+                <p className="text-gray-500 text-xs mb-4">{cert.year}</p>
 
-                  {cert.link && (
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 text-blue-600 underline hover:text-blue-800"
-                    >
-                      Show Credential
-                    </a>
-                  )}
-                </motion.div>
-              </ElectricBorder>
+                {cert.link ? (
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto text-sm font-medium text-white bg-blue-600/80 hover:bg-blue-600 px-4 py-2 rounded-full transition-colors"
+                  >
+                    View Credential
+                  </a>
+                ) : (
+                  <span className="mt-auto text-sm text-gray-500 italic px-4 py-2">
+                    Coming Soon
+                  </span>
+                )}
+              </motion.div>
             </Reveal>
           ))}
         </div>

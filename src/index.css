@@ -1,57 +1,58 @@
-/* Import Tailwind CSS utilities */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 
 /* Set the entire page background to black */
 body {
   background: #000000;
-  body {
-    color: #E5E5E5;
-  }
+  color: #E5E5E5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
 }
+
 p {
-    color: #A0A0A0;
+  color: #A0A0A0;
+  line-height: 1.6;
 }
-h1,h2{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* Modern tight spacing */
 }
-h3,h4{
-  color: #111827;
-}
+
 /* profile card */
 /* Center the main avatar inside the card */
 .pc-avatar-content .avatar {
   display: block;
-  width: 90%;          /* make it big, but leave some padding */
+  width: 90%;
+  /* make it big, but leave some padding */
   max-width: 90%;
   height: auto;
-  margin: 0 auto;      /* centers horizontally */
-  object-fit: cover;   /* keeps aspect ratio */
-  border-radius: 15px; /* optional rounded corners */
-  z-index: 2;          /* above animation layers */
+  margin: 0 auto;
+  /* centers horizontally */
+  object-fit: cover;
+  /* keeps aspect ratio */
+  border-radius: 15px;
+  /* optional rounded corners */
+  z-index: 2;
+  /* above animation layers */
 }
 
 .pc-card-wrapper {
-  position: relative;   /* keep current positioning */
-  top: -70px;           /* move card 50px up, adjust as needed */
+  position: relative;
+  /* keep current positioning */
+  top: -70px;
+  /* move card 50px up, adjust as needed */
   display: flex;
-  justify-content: center;  /* keep it centered horizontally */
-  z-index: 5;           /* above background animations */
+  justify-content: center;
+  /* keep it centered horizontally */
+  z-index: 5;
+  /* above background animations */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,65 +5,69 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Contact() {
   const contacts = [
     {
-      icon: <FaEnvelope size={40} />, // slightly smaller for smoother Safari performance
+      icon: <FaEnvelope size={30} />,
       url: "mailto:20dtamrat@gmail.com",
       label: "Email",
+      color: "hover:text-red-400",
+      borderColor: "group-hover:border-red-500/50",
+      shadow: "group-hover:shadow-red-500/20"
     },
     {
-      icon: <FaLinkedin size={40} />,
+      icon: <FaLinkedin size={30} />,
       url: "https://www.linkedin.com/in/dagimawi-tamrat/",
       label: "LinkedIn",
+      color: "hover:text-blue-400",
+      borderColor: "group-hover:border-blue-500/50",
+      shadow: "group-hover:shadow-blue-500/20"
     },
     {
-      icon: <FaGithub size={40} />,
+      icon: <FaGithub size={30} />,
       url: "https://github.com/Dagimawi7",
       label: "GitHub",
+      color: "hover:text-purple-400",
+      borderColor: "group-hover:border-purple-500/50",
+      shadow: "group-hover:shadow-purple-500/20"
     },
   ];
 
   return (
-    <section id="contact" className="py-12"> {/* added more padding */}
+    <section id="contact" className="py-24 relative">
       <div className="max-w-4xl mx-auto px-6 text-center">
 
-        {/* Section title */}
         <Reveal>
-          <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white">Get In Touch</h2>
         </Reveal>
 
-        {/* Description */}
         <Reveal>
-          <p className="text-lg text-gray-700 mb-8">
-            Feel free to reach out for collaboration or opportunities!
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
         </Reveal>
 
-        {/* Contact icons with floating animation */}
         <Reveal>
-          <div className="flex justify-center gap-8 md:gap-12 flex-wrap">
+          <div className="flex justify-center gap-6 md:gap-8 flex-wrap">
             {contacts.map((item, index) => (
               <motion.a
                 key={index}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={item.label}
-                className="text-gray-800 hover:text-blue-600 transition-colors"
-                whileHover={{ scale: 1.2, rotate: 5 }} // smaller rotation for smoother animation
-                whileTap={{ scale: 1.05, rotate: -5 }}
-                animate={{
-                  y: [0, -6, 0], // reduced movement to prevent Safari lag
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                  delay: index * 0.2, // stagger each icon slightly
-                }}
+                className={`group relative p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl transition-all duration-300 ${item.borderColor} hover:-translate-y-2 hover:shadow-lg ${item.shadow}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item.icon}
+                <div className={`text-gray-300 transition-colors ${item.color}`}>
+                  {item.icon}
+                </div>
+                <span className="sr-only">{item.label}</span>
               </motion.a>
             ))}
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-16 text-gray-500 text-sm">
+            <p>© {new Date().getFullYear()} Dagimawi Tamrat. Built with React & Tailwind.</p>
           </div>
         </Reveal>
 

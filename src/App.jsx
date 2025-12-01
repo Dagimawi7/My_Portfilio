@@ -42,7 +42,7 @@ export default function App() {
       <div className="flex justify-center items-center my-10 relative z-10">
         <ProfileCard />
       </div>
-      
+
       <About />
       <Skills />
       <Experience />
@@ -51,8 +51,8 @@ export default function App() {
       <Resume />
       <Contact />
       <Footer />
-      
-          
+
+
 
     </div>
   );
