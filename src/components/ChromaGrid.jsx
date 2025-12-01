@@ -37,7 +37,7 @@ export default function ProjectsChroma({
       techStack: ["React", "Node.js", "MongoDB"],
       borderColor: "#10B981",
       gradient: "linear-gradient(210deg, #10B981, #000)",
-      url: "https://github.com/Dagimawi7/ZT-Ecommerce-Web",
+      url: "https://zt-ecommerce-web-54zk.vercel.app/",
     },
   ];
 
