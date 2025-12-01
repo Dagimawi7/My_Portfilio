@@ -35,7 +35,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.2 }}
         className="text-lg md:text-2xl text-gray-600 max-w-2xl"
       >
-        A Full-Stack Software Engineer passionate about building scalable,
+        An Aspiring Full-Stack Software Engineer passionate about building scalable,
         impactful solutions with modern technologies.
       </motion.p>
 
