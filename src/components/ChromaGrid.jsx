@@ -45,7 +45,18 @@ export default function ProjectsChroma({
       description:
         "A user-centered redesign and prototype of the Cambridge Community Development Department (CDD) website. Focused on improving navigation, accessibility, and content clarity for residents and staff. Includes responsive design and clear visual hierarchy.",
       media: cdd,
-      techStack: ["HTML", "CSS", "JavaScript"],
+      techStack: [
+        "React (v19.0)",
+        "Vite (v7.2)",
+        "React Router (v7.10)",
+        "JavaScript (ES Modules)",
+        "Tailwind CSS (v3.4)",
+        "Lucide React",
+        "clsx",
+        "tailwind-merge",
+        "Leaflet",
+        "React Leaflet"
+      ],
       borderColor: "#8b5cf6", // Violet
       gradient: "linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0))",
       url: "https://cdd-ux-prototype.vercel.app/",
