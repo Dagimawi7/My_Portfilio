@@ -45,7 +45,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="text-5xl md:text-7xl font-bold mb-6 flex flex-col md:flex-row items-center justify-center gap-3"
       >
-        <span>Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Dagimawi</span></span>
+        <span>Hi, I'm <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">Dagimawi</span></span>
 
         {/* Waving hand */}
         <motion.span
@@ -96,7 +96,7 @@ export default function Hero() {
           className="group relative px-8 py-3 bg-blue-600 text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/25"
         >
           <span className="relative z-10">View Projects</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
 
         <a

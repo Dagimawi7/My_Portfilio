@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './ChromaGrid.css';
 import zt from '../assets/zt.png';
+import cdd from '../assets/cdd.png';
 
 export default function ProjectsChroma({
   projects,
@@ -27,7 +28,7 @@ export default function ProjectsChroma({
       techStack: ["Python", "PyQt5", "REST APIs", "CI/CD"],
       borderColor: "#3b82f6", // Blue
       gradient: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
-      url: "https://github.com/Dagimawi7/Weather-Application",
+      url: "https://weather-application-six-blush.vercel.app/",
     },
     {
       title: "E-Commerce Platform",
@@ -40,14 +41,14 @@ export default function ProjectsChroma({
       url: "https://zt-ecommerce-web-54zk.vercel.app/",
     },
     {
-      title: "Portfolio V1",
+      title: "cdd-ux-prototype",
       description:
-        "My previous portfolio site, showcasing early frontend development skills and design experiments. A stepping stone to modern web development.",
-      media: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
+        "A user-centered redesign and prototype of the Cambridge Community Development Department (CDD) website. Focused on improving navigation, accessibility, and content clarity for residents and staff. Includes responsive design and clear visual hierarchy.",
+      media: {cdd},
       techStack: ["HTML", "CSS", "JavaScript"],
       borderColor: "#8b5cf6", // Violet
       gradient: "linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0))",
-      url: "#",
+      url: "https://cdd-ux-prototype.vercel.app/",
     },
   ];
 
