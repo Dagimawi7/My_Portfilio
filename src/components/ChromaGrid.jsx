@@ -44,7 +44,7 @@ export default function ProjectsChroma({
       title: "cdd-ux-prototype",
       description:
         "A user-centered redesign and prototype of the Cambridge Community Development Department (CDD) website. Focused on improving navigation, accessibility, and content clarity for residents and staff. Includes responsive design and clear visual hierarchy.",
-      media: {cdd},
+      media: cdd,
       techStack: ["HTML", "CSS", "JavaScript"],
       borderColor: "#8b5cf6", // Violet
       gradient: "linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0))",
