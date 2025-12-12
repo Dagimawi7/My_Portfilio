@@ -1,7 +1,7 @@
 import Reveal from "./Reveal";
 import TiltedCard from './TiltedCard';
 import resume from '../assets/resumepic.png';
-import resumepdf from '../assets/Resume.pdf';
+import resumepdf from '../assets/DTResume.pdf';
 import { FileDown } from "lucide-react";
 
 export default function Resume() {
